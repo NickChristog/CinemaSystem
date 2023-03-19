@@ -1,0 +1,103 @@
+body{
+  background-color:#6b6b6b;
+}
+
+h1{
+  font-size: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+h2{
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.playingNow{
+  font-size: 45px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.button{
+    background-color: #ff7002;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -25px 18px -14px inset,rgba(0, 0, 0, 0.15) 0 1px 2px,rgba(5, 5, 5, 0.15) 0 2px 4px,rgba(0, 0, 0, 0.15) 0 4px 8px,rgba(0, 0, 0, 0.15) 0 8px 16px,rgba(0, 0, 0, 0.15) 0 16px 32px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-self: center;
+    margin-left: 40%;
+  }
+  
+  .button:hover {
+    background-color: rgb(255, 72, 0);
+    transform: scale(1.03);
+  }
+
+  .button:active {
+    background-color: rgb(255, 0, 0);
+    transform: scale(1.05);
+  }
+
+.cinemaSeatsContainer{
+  display: grid;
+  grid-template-columns: 70px 70px 70px 70px 70px;
+  text-align: center;
+}
+
+.cinemaSeats{
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 2;
+  font-size: 16px;
+  touch-action: manipulation;
+  margin-left: auto;
+}
+
+.cinemaSeats:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.01);
+}
+
+.cinemaSeats:active {
+  box-shadow: rgba(149, 0, 255, 0.464) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.01);
+}
+
+.textInput{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: black;
+  align-items: center;
+  text-align: center;
+  border: 5px solid #404040;
+  background-color:coral;
+  padding: 1%;
+}

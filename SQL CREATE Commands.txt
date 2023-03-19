@@ -1,0 +1,51 @@
+MOVIES TABLE:
+
+CREATE TABLE movies(id SERIAL PRIMARY KEY, title TEXT NOT NULL, runtime TEXT,
+					pgRating INTEGER, spokenLanguage TEXT DEFAULT 'English');
+
+
+
+
+
+
+SCREENING ROOMS TABLE:
+CREATE TABLE screenRoom(id SERIAL PRIMARY KEY, name TEXT UNIQUE NOT NULL,
+						roomFloor INTEGER NOT NULL, capacity INTEGER NOT NULL,
+						imax BOOLEAN NOT NULL);
+
+
+
+SEATS TABLE : 
+
+CREATE TABLE seats(id SERIAL PRIMARY KEY, seatNumber CHAR(3) NOT NULL,
+				   screenRoomId INTEGER REFERENCES screenRoom(id) NOT NULL);
+
+
+
+
+
+SHOWTIMES TABLE: 
+
+CREATE TABLE showtimes(id SERIAL PRIMARY KEY, time TIMESTAMP NOT NULL,
+					   movieId INTEGER REFERENCES movies(id) ON DELETE CASCADE NOT NULL ,
+					   screenRoomId INTEGER REFERENCES screenRoom(id) NOT NULL)
+
+
+
+
+
+RESERVATIONS TABLE:
+CREATE TABLE reservations(id SERIAL PRIMARY KEY,
+						  seatId INTEGER REFERENCES seats(id) NOT NULL,
+						  showtimeId INTEGER REFERENCES showtimes(id) 
+						  ON DELETE CASCADE NOT NULL,
+						  UNIQUE(seatId, showtimeId))
+
+
+TIKCETS TABLE: 
+
+CREATE TABLE tickets(id SERIAL PRIMARY KEY,
+					ticketNumber SERIAL,
+					reservationId INTEGER REFERENCES reservations(id) 
+					ON DELETE CASCADE NOT NULL,
+					price NUMERIC DEFAULT 12.4)		

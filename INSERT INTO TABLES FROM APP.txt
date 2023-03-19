@@ -1,0 +1,17 @@
+/*FOR TIMESTAMP AND INTERVAL SQL WONT ACCEPT THE RAW STRING FORMAT...SO WE DO THIS: */
+		
+
+		FOR TIMESTAMP: 
+            Query queryMovies = entityManager.createNativeQuery(
+					"INSERT INTO showtimes(time, movieid, screenroomid) VALUES (CAST(?1 AS TIMESTAMP), ?2 ,?3)");
+            queryMovies.setParameter(1,"20-april-2029 20:40");
+            queryMovies.setParameter(2, 2);
+            queryMovies.setParameter(3, 1);
+
+
+		FOR INTERVAL:
+			Query queryMovies = entityManager.createNativeQuery(
+                    "INSERT INTO movies(title, runtime, pgrating) VALUES (?1, CAST(?2 AS INTERVAL) ,?3)");
+            queryMovies.setParameter(1,"Avengers Kang Dynasty");
+            queryMovies.setParameter(2, ("1H 49M 50s"));
+            queryMovies.setParameter(3, 14);
